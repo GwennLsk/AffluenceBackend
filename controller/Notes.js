@@ -1,5 +1,5 @@
 const _= require('lodash');
-const {connection} = require("./db/dbconnect");
+const {connection} = require("../db/dbconnect");
 
 // CREATE
 function addNote(req, res) {
@@ -24,15 +24,13 @@ function getNotes(req, res) {
 function getOneNote(req, res) {
 
 }
-
-UPDATE `node_affluences`.`notes` SET `description`='tes' WHERE `idnotes`='1';
 // UPDATE
 function editNote(req, res) {
-    connection.query('UPDATE `node_affluences`.`notes` SET `title`='+title+', `description`='+desc+', `echeance`='+date+' WHERE `idnotes`='1'; +
+    connection.query('UPDATE `node_affluences`.`notes` SET `title`='+title+', `description`='+desc+', `echeance`='+date+' WHERE `idnotes`=\'1\';' +
         'VALUES ('+req.title+','+req.desc+' ,'+req.date+' );', function (error, results, fields) {
-        if (error) throw error;
-        console.log('Connected to DB !');
-    });
+            if (error) throw error;
+            console.log('Connected to DB !');
+        });
 
 }
 

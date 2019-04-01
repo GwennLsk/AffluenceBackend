@@ -17,7 +17,7 @@ let CreateTable = "CREATE TABLE `node_affluences`.`notes` (\n" +
     "  `echeance` DATETIME NULL,\n" +
     "  PRIMARY KEY (`idnotes`));"
 
-    connection.query(CreateTable, function (error, results, fields) {
+    connection.query(SelectTable, function (error, results, fields) {
         if (error) throw error;
         console.log('Table  `note` created ! ');
     });
